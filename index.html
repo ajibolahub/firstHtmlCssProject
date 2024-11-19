@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First Web Page</title>
+    <meta name="description" content="This is my first web page." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This is an external Css Style -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!-- This is an Internal Css Style -->
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+      h1 {
+        color: red;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+        color: #999;
+      }
+
+      .container,
+      p {
+        text-align: center;
+      }
+      .linkieimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .change-bg {
+        background-color: yellowgreen;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        color: rgb(167, 89, 89);
+        margin: 0 auto;
+        transition: background-color 0.5s ease-in-out;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      .change-bg-red {
+        background-color: red !important;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        color: rgb(167, 89, 89);
+        margin: 0 auto;
+        transition: background-color 0.5s ease-in-out;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Inline css -->
+    <div class="container">
+      <h1 class="heading">My First Web Page</h1>
+      <div class="linkieimg">
+        <img src="./images/linkie6.jpg" alt="My Image" width="200" />
+        <img src="./images/linkie6.jpg" alt="My Image" width="200" />
+        <img src="./images/linkie6.jpg" alt="My Image" width="200" />
+      </div>
+      <p>
+        This is my first web page. It's built using HTML, CSS, and JavaScript.
+      </p>
+      <a href="index2.html" target="_top">Go To My Second Web Page</a>
+      <button type="button" id="button">Click Me</button>
+      <button type="button" onclick="clickMe();">Run Me</button>
+      <button type="button" id="togglebtn">Toggle</button>
+      <button type="button" id="bgChange">Click To Change BG</button>
+
+      <div id="heading1">Change Me</div>
+      <div id="result" class="myresult">Total Sum Here</div>
+      <div class="resClass">Total 1 Sum Here</div>
+      <div class="multiply">Product shows here</div>
+      <div id="toggleMyText" style="display: none">TOGGLE ME NOW</div>
+      <div id="changeBG" class="change-bg">Change this BG</div>
+      <div id="showtimer">Show Timer Here</div>
+      <input type="number" value="2" id="timer" title="input" />
+    </div>
+
+    <!-- Unordered list -->
+    <ul>
+      <li><a href="https://www.google.com">Google</a></li>
+      <li><a href="https://www.facebook.com">Facebook</a></li>
+      <li><a href="https://www.instagram.com">Instagram</a></li>
+      <li><a href="https://www.twitter.com">Twitter</a></li>
+      <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+    </ul>
+
+    <!-- Ordered List -->
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ol>
+
+    <footer>Copyright &copy; 2022 My Website</footer>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+      // ID, Class, element
+      document.querySelector("#button").addEventListener("click", function () {
+        //alert("Your Registration has been successful!");
+        //document.getElementById("heading1").innerHTML= '<span style=\'color: red\'>Hello World</span>';
+        document.querySelector("div#result.myresult").innerHTML = addSubtract(
+          100,
+          40,
+          10
+        );
+        document.querySelector(".resClass").innerHTML = addSubtract(90, 30, 20);
+        document.querySelector(".multiply").innerHTML = addmultiply(3, 4, 2);
+      });
+
+      document
+        .querySelector("#togglebtn")
+        .addEventListener("click", function () {
+          if (
+            document.querySelector("#toggleMyText").style.display === "none"
+          ) {
+            document.querySelector("#toggleMyText").style.display = "block";
+          } else {
+            document.querySelector("#toggleMyText").style.display = "none";
+          }
+        });
+
+      document
+        .querySelector("#bgChange")
+        .addEventListener("click", function () {
+          document.getElementById("changeBG").style.backgroundColor = "blue";
+        });
+
+      console.log("TRIPLE", 7 === 7);
+      console.log("Double", 7 === "7");
+      console.log(
+        "Colors",
+        document.querySelector("#changeBG").style.backgroundColor
+      );
+
+      // Javascript functions
+      function addSubtract(a, b, c) {
+        return a + b - c;
+      }
+
+      // Javascript functions
+      function addmultiply(a, b, c) {
+        return a + b * c;
+      }
+
+      function clickMe() {
+        alert("Hello World");
+      }
+
+      // setTimeout and setInterval
+      /*    setTimeout(function() {
+        alert("Hello World after 3 seconds!");
+      }, 3000); */
+
+      // var, let, const
+      // loop, array, object
+
+      // setTimeout and setInterval
+      setInterval(function () {
+        document.getElementById("showtimer").innerHTML =
+          Number(document.getElementById("timer").value) + 1;
+      }, 2000);
+
+      //format
+      //setTimeout(function, milliseconds);
+    </script>
+  </body>
+</html>

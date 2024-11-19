@@ -1,0 +1,25 @@
+body {
+    background-color: violet;
+  }
+  h1 {
+    color: green;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  footer {
+    text-align: center;
+    color: #999;
+  }
+
+  .heading {
+    color: blue;
+    font-family:"Times New Roman", Times, serif;
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
